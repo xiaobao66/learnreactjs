@@ -1,0 +1,19 @@
+{
+  "name": "learnreactjs",
+  "version": "1.0.0",
+  "description": "learnreactjs",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xiaobaowei",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-react": "^6.11.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2"
+  }
+}
