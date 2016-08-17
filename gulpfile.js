@@ -16,4 +16,4 @@ gulp.task('watch', function () {
     gulp.watch('scripts/src/*.js', ['babel-react']);
 });
 
-gulp.task('default', ['babel-react', 'watch']);
+gulp.task('default', ['babel-react']);
