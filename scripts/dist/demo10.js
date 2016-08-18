@@ -37,7 +37,7 @@ var UserInfo = React.createClass({
         }, function (error) {
             return _this.setState({
                 loading: false,
-                error: error
+                error: JSON.parse(error.response)
             });
         });
     },
@@ -83,5 +83,7 @@ var UserInfo = React.createClass({
 });
 
 ReactDOM.render(React.createElement(UserInfo, { getUserInfo: $.getJSON('https://api.github.com/users/xiaobao66', {
-        access_token: 'd489881c2b775224bf5091f55b20185a9edd4040'
+        access_token: '2575d547a5fcb9c6714fbaaf472e32dd37e29c77'
     }) }), document.getElementById('example'));
+
+//github userid: 12163011

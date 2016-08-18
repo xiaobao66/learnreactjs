@@ -30,7 +30,7 @@ var UserInfo = React.createClass({
             }),
             error => this.setState({
                 loading: false,
-                error: error
+                error: JSON.parse(error.response)
             })
         )
     },
@@ -55,8 +55,10 @@ ReactDOM.render(
     <UserInfo getUserInfo={$.getJSON(
         'https://api.github.com/users/xiaobao66',
         {
-            access_token: 'd489881c2b775224bf5091f55b20185a9edd4040'
+            access_token: '2575d547a5fcb9c6714fbaaf472e32dd37e29c77'
         }
     )}></UserInfo>,
     document.getElementById('example')
 );
+
+//github userid: 12163011
