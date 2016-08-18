@@ -30,7 +30,7 @@ var UserInfo = React.createClass({
             }),
             error => this.setState({
                 loading: false,
-                error: error
+                error: JSON.parse(error.response)
             })
         )
     },

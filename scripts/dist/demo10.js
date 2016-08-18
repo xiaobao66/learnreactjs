@@ -37,7 +37,7 @@ var UserInfo = React.createClass({
         }, function (error) {
             return _this.setState({
                 loading: false,
-                error: error
+                error: JSON.parse(error.response)
             });
         });
     },
