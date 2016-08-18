@@ -1,7 +1,9 @@
+"use strict";
+
 var HelloMessage = React.createClass({
     displayName: "HelloMessage",
 
-    render: function () {
+    render: function render() {
         return React.createElement(
             "h1",
             null,

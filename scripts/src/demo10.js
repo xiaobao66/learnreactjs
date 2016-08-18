@@ -11,17 +11,28 @@ var UserInfo = React.createClass({
     },
     componentDidMount: function () {
         var that = this;
-        this.props.getUserInfo.then(function (value) {
-            that.setState({
+        // this.props.getUserInfo.then(function (value) {
+        //     that.setState({
+        //         loading: false,
+        //         data: value
+        //     });
+        // }, function (error) {
+        //     that.setState({
+        //         loading: false,
+        //         error: JSON.parse(error.response)
+        //     });
+        // });
+        //改用es2015箭头函数
+        this.props.getUserInfo.then(
+            result => this.setState({
                 loading: false,
-                data: value
-            });
-        }, function (error) {
-            that.setState({
+                data: result
+            }),
+            error => this.setState({
                 loading: false,
-                error: JSON.parse(error.response)
-            });
-        });
+                error: error
+            })
+        )
     },
     render: function () {
         if (this.state.loading) {
@@ -44,7 +55,7 @@ ReactDOM.render(
     <UserInfo getUserInfo={$.getJSON(
         'https://api.github.com/users/xiaobao66',
         {
-            access_token: '26f03103c90507e92bb02935249e483872a00850'
+            access_token: 'd489881c2b775224bf5091f55b20185a9edd4040'
         }
     )}></UserInfo>,
     document.getElementById('example')

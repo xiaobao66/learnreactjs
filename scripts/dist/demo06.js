@@ -1,13 +1,15 @@
+"use strict";
+
 /**
  * Created by xiaobaowei on 2016/8/17.
  */
 var UserInput = React.createClass({
     displayName: "UserInput",
 
-    handleClick: function () {
+    handleClick: function handleClick() {
         this.refs.userNameInput.focus();
     },
-    render: function () {
+    render: function render() {
         return React.createElement(
             "div",
             null,

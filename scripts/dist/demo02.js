@@ -1,3 +1,5 @@
+'use strict';
+
 var names = ['Tom', 'Jack', 'Amy'];
 
 ReactDOM.render(React.createElement(

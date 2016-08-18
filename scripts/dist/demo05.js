@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Created by xiaobaowei on 2016/8/16.
  */
@@ -7,12 +9,12 @@ var MyName = React.createClass({
     propTypes: {
         name: React.PropTypes.string.isRequired
     },
-    getDefaultProps: function () {
+    getDefaultProps: function getDefaultProps() {
         return {
             name: 'xiaobao'
         };
     },
-    render: function () {
+    render: function render() {
         return React.createElement(
             'h1',
             null,

@@ -1,7 +1,9 @@
+'use strict';
+
 var NodeList = React.createClass({
     displayName: 'NodeList',
 
-    render: function () {
+    render: function render() {
         return React.createElement(
             'ol',
             null,

@@ -12,6 +12,7 @@
   "author": "xiaobaowei",
   "license": "ISC",
   "devDependencies": {
+    "babel-preset-es2015": "^6.13.2",
     "babel-preset-react": "^6.11.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2"

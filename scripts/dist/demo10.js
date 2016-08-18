@@ -1,31 +1,47 @@
+'use strict';
+
 /**
  * Created by xiaobaowei on 2016/8/18.
  */
 var UserInfo = React.createClass({
     displayName: 'UserInfo',
 
-    getInitialState: function () {
+    getInitialState: function getInitialState() {
         return {
             loading: true,
             error: null,
             data: null
         };
     },
-    componentDidMount: function () {
+    componentDidMount: function componentDidMount() {
+        var _this = this;
+
         var that = this;
-        this.props.getUserInfo.then(function (value) {
-            that.setState({
+        // this.props.getUserInfo.then(function (value) {
+        //     that.setState({
+        //         loading: false,
+        //         data: value
+        //     });
+        // }, function (error) {
+        //     that.setState({
+        //         loading: false,
+        //         error: JSON.parse(error.response)
+        //     });
+        // });
+        //改用es2015箭头函数
+        this.props.getUserInfo.then(function (result) {
+            return _this.setState({
                 loading: false,
-                data: value
+                data: result
             });
         }, function (error) {
-            that.setState({
+            return _this.setState({
                 loading: false,
-                error: JSON.parse(error.response)
+                error: error
             });
         });
     },
-    render: function () {
+    render: function render() {
         if (this.state.loading) {
             return React.createElement(
                 'span',
@@ -67,5 +83,5 @@ var UserInfo = React.createClass({
 });
 
 ReactDOM.render(React.createElement(UserInfo, { getUserInfo: $.getJSON('https://api.github.com/users/xiaobao66', {
-        access_token: '26f03103c90507e92bb02935249e483872a00850'
+        access_token: 'd489881c2b775224bf5091f55b20185a9edd4040'
     }) }), document.getElementById('example'));
