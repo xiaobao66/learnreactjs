@@ -12,10 +12,11 @@ var TabSelector = React.createClass({
     },
 
     render: function () {
-        var tabs = this.props.data.map(function (item) {
+        var tabs = this.props.data.map(function (item, index) {
             var selected = (item.value === this.state.selected ? 'selected' : '');
             return (
-                <li data-value={item.value} className={selected} onClick={this.handleClick}>
+                <li data-value={item.value} className={selected} onClick={this.handleClick}
+                    key={Math.random()}>
                     {item.value}
                 </li>
             );
